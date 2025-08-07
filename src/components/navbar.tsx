@@ -33,31 +33,44 @@
 // }
 import ButtonDark from './button-dark'
 import Logo from './logo'
+import { NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
-    <nav className="w-full shadow-md">
-      <div className="mx-auto flex items-center p-5">
-        <div className="flex-none">
-          <Logo />
-        </div>
-
+    <nav className="w-full fixed top-0 left-0 z-50 shadow-md">
+      <div className="mx-auto flex items-center px-20 py-5">
+        <Logo />
         <div className="flex-1 flex justify-center">
           <ul className="flex space-x-16 list-none">
             <li>
-              <a href="#about" className="font-semibold text-xl">
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                }
+              >
                 À propos
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#works" className="font-semibold text-xl">
+              <NavLink
+                to="/projects"
+                className={({ isActive }) =>
+                  isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                }
+              >
                 Projets
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="#contact" className="font-semibold text-xl">
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                }
+              >
                 Contact
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>

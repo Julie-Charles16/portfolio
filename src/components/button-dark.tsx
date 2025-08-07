@@ -61,4 +61,3 @@ export default function ButtonDark({ icon, altIcon, text, className }: ButtonPro
     </button>
   )
 }
-
