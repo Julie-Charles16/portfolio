@@ -9,6 +9,49 @@ body,
   padding: 0;
 }
 
+.star-wars-container {
+  overflow: hidden;
+  height: 70vh; /* zone visible */
+  position: relative;
+  width: 100%;
+}
+
+.star-wars-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* espace entre les lignes */
+  animation: scrollUp 40s linear infinite; /* durée à ajuster selon le texte */
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(100%); /* commence sous la zone visible */
+  }
+  100% {
+    transform: translateY(-100%); /* fini au-dessus de la zone visible */
+  }
+}
+
+.star-wars-text p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+  margin: 0;
+}
+/* h1 {
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+} */
+
 /* body {
   background-color: #fcf1fd;
 } */

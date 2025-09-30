@@ -1,46 +1,30 @@
-// import { useState } from 'react'
-// export default function Navbar() {
-//   const [isOpen, setIsOpen] = useState(false)
-
-//   const toggleMenu = () => {
-//     setIsOpen(!isOpen)
-//   }
-
-//   return (
-//     <>
-//       <nav>
-//         <div>MonLogo</div>
-//         <button className="navbar-toggle" onClick={toggleMenu}>
-//           {isOpen ? '✖' : '☰'}
-//         </button>
-//         <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
-//           <li>
-//             <a href="#home">Accueil</a>
-//           </li>
-//           <li>
-//             <a href="#about">À propos</a>
-//           </li>
-//           <li>
-//             <a href="#works">Projets</a>
-//           </li>
-//           <li>
-//             <a href="#contact">Contact</a>
-//           </li>
-//         </ul>
-//       </nav>
-//     </>
-//   )
-// }
+import { useState } from 'react'
 import ButtonDark from './button-dark'
 import Logo from './logo'
 import { NavLink } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const menuVariants = {
+    hidden: { height: 0, opacity: 0 },
+    visible: { height: 'auto', opacity: 1, transition: { duration: 0.3 } },
+    exit: { height: 0, opacity: 0, transition: { duration: 0.2 } },
+  }
+
   return (
     <nav className="w-full fixed top-0 left-0 z-50 shadow-md">
-      <div className="mx-auto flex items-center px-20 py-5">
+      <div className="mx-auto flex items-center justify-between px-6 md:px-20 py-5">
         <Logo />
-        <div className="flex-1 flex justify-center">
+
+        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-gray-800">
+          <FontAwesomeIcon icon={isOpen ? faXmark : faBars} size="lg" />
+        </button>
+
+        <div className="hidden md:flex flex-1 justify-center">
           <ul className="flex space-x-16 list-none">
             <li>
               <NavLink
@@ -75,10 +59,65 @@ export default function Navbar() {
           </ul>
         </div>
 
-        <div className="flex-none">
+        <div className="hidden md:block">
           <ButtonDark icon="./img/moon.png" altIcon="./img/soleil.png" />
         </div>
       </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={menuVariants}
+            className="md:hidden bg-[#fcf1fd] shadow-md overflow-hidden"
+          >
+            <ul className="flex flex-col items-center space-y-4 py-6">
+              <li>
+                <NavLink
+                  to="/about"
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                  }
+                >
+                  À propos
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/projects"
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                  }
+                >
+                  Projets
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className={({ isActive }) =>
+                    isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                  }
+                >
+                  Contact
+                </NavLink>
+              </li>
+              <li>
+                <ButtonDark
+                  icon="./img/moon.png"
+                  altIcon="./img/soleil.png"
+                  className="w-8 h-8 md:w-auto md:h-auto"
+                />
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   )
 }

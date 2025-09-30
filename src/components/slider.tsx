@@ -16,9 +16,12 @@ interface SliderProps {
 }
 
 interface SliderContentProps {
-  icon?: React.ReactNode
   title: string
   desc: string
+  image?: string
+  tech?: string[]
+  github?: string
+  demo?: string
 }
 
 function Slider({ activeSlide: initialSlide, data }: SliderProps) {
@@ -97,12 +100,33 @@ function Slider({ activeSlide: initialSlide, data }: SliderProps) {
   )
 }
 
-function SliderContent({ icon, title, desc }: SliderContentProps) {
+function SliderContent({ title, desc, image, tech, github, demo }: SliderContentProps) {
   return (
     <div className="sliderContent">
-      {icon}
+      {image && <img src={image} alt={title} className="projectImage" />}
       <h2>{title}</h2>
       <p>{desc}</p>
+
+      <div className="techStack">
+        {tech?.map((t, i) => (
+          <span key={i} className="tech">
+            {t}
+          </span>
+        ))}
+      </div>
+
+      <div className="links">
+        {github && (
+          <a href={github} target="_blank" rel="noopener noreferrer">
+            Code
+          </a>
+        )}
+        {demo && (
+          <a href={demo} target="_blank" rel="noopener noreferrer">
+            Demo
+          </a>
+        )}
+      </div>
     </div>
   )
 }
