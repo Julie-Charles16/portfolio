@@ -30,7 +30,7 @@ export default function Navbar() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                  isActive ? 'text-[#8A226F] text-xl font-bold' : 'font-bold text-gray-800 text-xl'
                 }
               >
                 À propos
@@ -40,7 +40,7 @@ export default function Navbar() {
               <NavLink
                 to="/projects"
                 className={({ isActive }) =>
-                  isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                  isActive ? 'text-[#8A226F] text-xl font-bold' : 'font-bold text-gray-800 text-xl'
                 }
               >
                 Projets
@@ -50,7 +50,7 @@ export default function Navbar() {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                  isActive ? 'text-[#8A226F] text-xl font-bold' : 'font-bold text-gray-800 text-xl'
                 }
               >
                 Contact

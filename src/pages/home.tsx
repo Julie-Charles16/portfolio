@@ -39,9 +39,9 @@ export default function Home() {
 
           {/* Image */}
           <img
-            src="./img/Me.png"
+            src="./img/moi.png"
             alt="mon avatar"
-            className="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[400px] lg:h-[400px] object-cover rounded-full lg:ml-24"
+            className="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[400px] lg:h-[400px] object-cover rounded-full lg:ml-24 border-4 border-black"
           />
         </div>
       </div>

@@ -8,6 +8,12 @@ body,
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: 'Inter', sans-serif;
+}
+h1, h2, h3, p {
+  font-family: 'Montserrat', sans-serif;
+}
 
 .star-wars-container {
   overflow: hidden;
@@ -20,7 +26,7 @@ body,
   display: flex;
   flex-direction: column;
   gap: 1.5rem; /* espace entre les lignes */
-  animation: scrollUp 40s linear infinite; /* durée à ajuster selon le texte */
+  animation: scrollUp 40s linear; /* durée à ajuster selon le texte */
 }
 
 @keyframes scrollUp {
@@ -37,8 +43,9 @@ body,
   line-height: 2rem;
   text-align: center;
   margin: 0;
+  
 }
-/* h1 {
+h3 {
   background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
   background-size: 600% 600%;
   -webkit-background-clip: text;
@@ -50,7 +57,7 @@ body,
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-} */
+}
 
 /* body {
   background-color: #fcf1fd;
