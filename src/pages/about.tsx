@@ -2,7 +2,11 @@ import Title from '../components/title'
 
 export default function About() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-start px-6 pt-24">
+    <section
+      className="min-h-screen flex flex-col items-center justify-start px-6 pt-24
+                        bg-[#fcf1fd] dark:bg-gray-900
+                        text-gray-800 dark:text-white"
+    >
       <div className="text-center mb-12">
         <Title
           title="À propos"
@@ -10,6 +14,7 @@ export default function About() {
           className="text-4xl md:text-6xl font-bold text-center mb-8"
         />
       </div>
+
       <div className="star-wars-container">
         <div className="star-wars-text">
           <p>

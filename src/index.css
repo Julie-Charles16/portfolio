@@ -11,7 +11,10 @@ body,
 body {
   font-family: 'Inter', sans-serif;
 }
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -43,7 +46,6 @@ h1, h2, h3, p {
   line-height: 2rem;
   text-align: center;
   margin: 0;
-  
 }
 h3 {
   background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
@@ -54,9 +56,38 @@ h3 {
 }
 
 @keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Styles globaux pour light / dark mode */
+body.light {
+  background-color: #fcf1fd; /* ton fond clair existant */
+  color: #000000; /* texte par défaut en clair */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+body.dark {
+  background-color: #1e1e1e; /* fond sombre */
+  color: #ffffff; /* texte en clair */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+* {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* body {

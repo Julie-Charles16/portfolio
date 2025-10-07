@@ -1,7 +1,6 @@
 import { StrictMode } from 'react'
 
 import Slider from '../components/slider'
-
 import data from '../data'
 import '../styles/slider.css'
 import Title from '../components/title'
@@ -9,7 +8,11 @@ import Title from '../components/title'
 export default function Projects() {
   return (
     <StrictMode>
-      <div className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 md:px-10 pt-24">
+      <div
+        className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 md:px-10 pt-24
+                      bg-[#fcf1fd] dark:bg-gray-900
+                      text-gray-800 dark:text-white"
+      >
         {/* Titre */}
         <Title
           title="Projets"

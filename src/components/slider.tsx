@@ -80,19 +80,21 @@ function Slider({ activeSlide: initialSlide, data }: SliderProps) {
         ))}
       </div>
 
-      <div className="btns">
+      <div className="btns flex justify-center gap-5 mt-20">
         <FontAwesomeIcon
-          className="btn"
+          className={`btn w-10 h-10 flex justify-center items-center rounded-full transition-all
+                bg-white/20 dark:bg-black/20
+                border border-white/25 dark:border-black/25`}
           onClick={prev}
           icon={faChevronLeft}
-          color="#000000ff"
           size="2x"
         />
         <FontAwesomeIcon
-          className="btn"
+          className={`btn w-10 h-10 flex justify-center items-center rounded-full transition-all
+                bg-white/20 dark:bg-black/20
+                border border-white/25 dark:border-black/25`}
           onClick={next}
           icon={faChevronRight}
-          color="#000000ff"
           size="2x"
         />
       </div>

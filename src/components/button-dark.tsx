@@ -1,63 +1,43 @@
-import { useState } from 'react'
+import { useTheme } from '../context/useTheme'
 
 interface ButtonProps {
-  icon?: string
-  altIcon?: string
-  className?: string
+  icon?: string // icône mode clair
+  altIcon?: string // icône mode sombre
   text?: string
+  className?: string
 }
 
 export default function ButtonDark({ icon, altIcon, text, className }: ButtonProps) {
-  const [currentIcon, setCurrentIcon] = useState(icon)
-  const [fade, setFade] = useState(true)
+  const { theme, toggleTheme } = useTheme()
 
-  const toggleIcon = () => {
-    setFade(false)
-    setTimeout(() => {
-      setCurrentIcon(prev => (prev === icon ? altIcon : icon))
-      setFade(true)
-    }, 150)
-  }
+  const isDark = theme === 'dark'
 
-  const isAltIcon = currentIcon === altIcon
-  const backgroundColor = isAltIcon ? '#FCF1FD' : '#1E1E1E'
-  const borderClass = isAltIcon ? 'border border-black' : 'border-transparent'
-  const iconFilter = isAltIcon ? '' : 'filter invert brightness-0'
+  // On choisit l'icône en fonction du thème global
+  const currentIcon = isDark ? altIcon || icon : icon
 
-  const setContentButton = () => {
-    const iconElement = currentIcon ? (
-      <img
-        key={currentIcon}
-        className={`w-5 h-5 transition-opacity duration-300 ${iconFilter} ${
-          fade ? 'opacity-100' : 'opacity-0'
-        }`}
-        src={currentIcon}
-        alt="icône du bouton"
-      />
-    ) : null
+  // Texte : noir sur clair, noir sur clair sur bg clair et blanc sur bg sombre
+  const textColor = isDark ? 'text-black' : 'text-white'
 
-    const textElement = text ? (
-      <span className={`font-semibold text-sm ${isAltIcon ? 'text-black' : 'text-white'}`}>
-        {text}
-      </span>
-    ) : null
+  // Fond : clair en dark mode (si tu veux), sombre en mode clair
+  const backgroundColor = isDark ? '#FCF1FD' : '#1E1E1E'
 
-    return (
-      <div className="flex items-center gap-2">
-        {iconElement}
-        {textElement}
-      </div>
-    )
-  }
+  // Icône : filter invert pour s’adapter au fond
+  const iconFilter = isDark ? '' : 'filter invert brightness-0'
 
   return (
     <button
-      className={`relative rounded-full min-w-[100px] h-[40px] px-4 flex items-center justify-center cursor-pointer hover:scale-110 transition-all duration-300 ${borderClass} ${className || ''}`}
+      className={`relative rounded-full min-w-[100px] h-[40px] px-4 flex items-center justify-center
+                  cursor-pointer hover:scale-110 transition-all duration-300 ${className || ''}`}
       style={{ backgroundColor }}
       aria-label={text || 'Bouton avec icône'}
-      onClick={toggleIcon}
+      onClick={toggleTheme}
     >
-      {setContentButton()}
+      <div className="flex items-center gap-2">
+        {currentIcon && (
+          <img className={`w-5 h-5 ${iconFilter}`} src={currentIcon} alt="icône du bouton" />
+        )}
+        {text && <span className={`font-semibold text-sm ${textColor}`}>{text}</span>}
+      </div>
     </button>
   )
 }

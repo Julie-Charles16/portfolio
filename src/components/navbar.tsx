@@ -17,10 +17,16 @@ export default function Navbar() {
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 shadow-md">
-      <div className="mx-auto flex items-center justify-between px-6 md:px-20 py-5">
+      <div
+        className="mx-auto flex items-center justify-between px-6 md:px-20 py-5
+                bg-[#fcf1fd] dark:bg-gray-900"
+      >
         <Logo />
 
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-gray-800">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-gray-800 dark:text-white"
+        >
           <FontAwesomeIcon icon={isOpen ? faXmark : faBars} size="lg" />
         </button>
 
@@ -30,7 +36,9 @@ export default function Navbar() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  isActive ? 'text-[#8A226F] text-xl font-bold' : 'font-bold text-gray-800 text-xl'
+                  isActive
+                    ? 'text-[#8A226F] text-xl font-bold'
+                    : 'font-bold text-gray-800 dark:text-white text-xl'
                 }
               >
                 À propos
@@ -40,7 +48,9 @@ export default function Navbar() {
               <NavLink
                 to="/projects"
                 className={({ isActive }) =>
-                  isActive ? 'text-[#8A226F] text-xl font-bold' : 'font-bold text-gray-800 text-xl'
+                  isActive
+                    ? 'text-[#8A226F] text-xl font-bold'
+                    : 'font-bold text-gray-800 dark:text-white text-xl'
                 }
               >
                 Projets
@@ -50,7 +60,9 @@ export default function Navbar() {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  isActive ? 'text-[#8A226F] text-xl font-bold' : 'font-bold text-gray-800 text-xl'
+                  isActive
+                    ? 'text-[#8A226F] text-xl font-bold'
+                    : 'font-bold text-gray-800 dark:text-white text-xl'
                 }
               >
                 Contact
@@ -71,7 +83,7 @@ export default function Navbar() {
             animate="visible"
             exit="exit"
             variants={menuVariants}
-            className="md:hidden bg-[#fcf1fd] shadow-md overflow-hidden"
+            className="md:hidden bg-[#fcf1fd] dark:bg-gray-900 shadow-md overflow-hidden"
           >
             <ul className="flex flex-col items-center space-y-4 py-6">
               <li>
@@ -79,7 +91,9 @@ export default function Navbar() {
                   to="/about"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                    isActive
+                      ? 'text-[#8A226F] font-bold'
+                      : 'font-bold text-gray-800 dark:text-white'
                   }
                 >
                   À propos
@@ -90,7 +104,9 @@ export default function Navbar() {
                   to="/projects"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                    isActive
+                      ? 'text-[#8A226F] font-bold'
+                      : 'font-bold text-gray-800 dark:text-white'
                   }
                 >
                   Projets
@@ -101,7 +117,9 @@ export default function Navbar() {
                   to="/contact"
                   onClick={() => setIsOpen(false)}
                   className={({ isActive }) =>
-                    isActive ? 'text-[#8A226F] font-bold' : 'font-bold text-gray-800'
+                    isActive
+                      ? 'text-[#8A226F] font-bold'
+                      : 'font-bold text-gray-800 dark:text-white'
                   }
                 >
                   Contact
