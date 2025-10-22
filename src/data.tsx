@@ -4,7 +4,7 @@ export default [
     bgColor: '#b8d6e5',
     image: '/img/monuments.png',
     title: 'Les monuments',
-    desc: 'Site interactif affichant des monuments français avec leur description et localisation sur une carte.',
+    desc: 'Site interactif présentant des monuments français sur une carte avec leur description.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/2024-dwwm-bsm-p4/monuments.git',
     demo: 'https://2024-dwwm-bsm-p4.github.io/monuments-jch/',

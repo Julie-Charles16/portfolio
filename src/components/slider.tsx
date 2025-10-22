@@ -80,7 +80,7 @@ function Slider({ activeSlide: initialSlide, data }: SliderProps) {
         ))}
       </div>
 
-      <div className="btns flex justify-center gap-5 mt-20">
+      <div className="btns flex justify-center gap-5 mt-4 sm:mt-6 lg:mt-10">
         <FontAwesomeIcon
           className={`btn w-10 h-10 flex justify-center items-center rounded-full transition-all
                 bg-white/20 dark:bg-black/20

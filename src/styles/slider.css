@@ -2,92 +2,35 @@
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
-  width: 362px;
-  height: 415px;
+  width: 90%;
+  max-width: 360px;
+  height: clamp(320px, 55vh, 440px); /* hauteur flexible */
   margin: 0 auto;
 }
 
 .slide {
-  width: 362px;
-  min-height: 415px;
+  width: 100%;
+  height: 100%;
   transition:
-    transform 500ms ease 0s,
-    opacity 500ms ease 0s,
-    visibility 500ms ease 0s;
+    transform 500ms ease,
+    opacity 500ms ease,
+    visibility 500ms ease;
   position: absolute;
   top: 0;
   border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* 3D reflection effect */
-.reflection {
-  position: absolute;
-  width: 100%;
-  height: 60px;
-  bottom: -60px;
-  border-radius: 12px;
-  transition:
-    transform 500ms ease 0s,
-    opacity 500ms ease 0s,
-    visibility 500ms ease 0s;
-}
-
-.sliderContent {
-  display: flex;
-  flex-direction: column;
-  color: white;
-  padding: 30px;
-  align-items: flex-start;
-  font-family:
-    'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
-    sans-serif;
-}
-
-.sliderContent h2 {
-  margin: 16px 0;
-  font-weight: bold;
-  font-size: large;
-}
-.sliderContent p {
-  margin: 0 0 16px 0;
-}
-
-/* body {
-  width: 100vw;
-  min-height: 100vh;
   overflow: hidden;
-  background: #111;
-} */
-
-/* .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-} */
-
-/* .btns {
-  padding-top: 100px;
 }
 
-.btns .btn {
-  cursor: pointer;
-}
-
-.btns .btn:last-child {
-  margin-left: 40px;
-} */
+/* Boutons de navigation */
 .btns {
-  margin-top: 75px;
+  margin-top: 2rem; /* espace par défaut */
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* espace entre les deux boutons */
+  gap: 20px;
 }
 
 .btns .btn {
@@ -96,16 +39,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 50%;
-  background: linear-gradient(145deg, #ffffff20, #00000020); /* dégradé translucide */
-  backdrop-filter: blur(10px); /* effet verre dépoli */
-
+  background: linear-gradient(145deg, #ffffff20, #00000020);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow:
     0 4px 10px rgba(0, 0, 0, 0.25),
     inset 0 1px 2px rgba(255, 255, 255, 0.2);
-
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -118,14 +58,39 @@
     inset 0 1px 3px rgba(255, 255, 255, 0.3);
 }
 
-/* normal css  */
-.projectImage {
-  width: 100%;
-  max-height: 150px;
-  object-fit: contain;
-  /* border-radius: 8px; */
-  margin-bottom: 12px;
+/* Contenu du slide */
+.sliderContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
 }
+
+.sliderContent img.projectImage {
+  width: 100%;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.sliderContent h2 {
+  font-weight: 700;
+  color: inherit;
+}
+
+.sliderContent p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em;
+}
+
 .techStack {
   margin-top: 10px;
   display: flex;
@@ -159,4 +124,48 @@
 .links a:hover {
   background: white;
   color: #111;
+}
+
+/* REFLEXION (désactivée sur mobile pour éviter débordement) */
+.reflection {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  bottom: -60px;
+  border-radius: 12px;
+  transition:
+    transform 500ms ease,
+    opacity 500ms ease,
+    visibility 500ms ease;
+}
+
+/* 📱 Petits écrans */
+@media (max-width: 700px) {
+  .slideC {
+    height: clamp(300px, 50vh, 400px);
+  }
+  .sliderContent p {
+    font-size: 0.85rem;
+  }
+  .btns {
+    margin-top: 1rem; /* espace réduit */
+  }
+  .reflection {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .slideC {
+    height: clamp(280px, 48vh, 360px);
+  }
+  .sliderContent h2 {
+    font-size: 1rem;
+  }
+  .sliderContent p {
+    font-size: 0.8rem;
+  }
+  .btns {
+    margin-top: 0.75rem; /* encore un peu moins */
+  }
 }
