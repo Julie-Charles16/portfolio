@@ -6,8 +6,8 @@ export default [
     title: 'Les monuments',
     desc: 'Site interactif présentant des monuments français sur une carte avec leur description.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/2024-dwwm-bsm-p4/monuments.git',
-    demo: 'https://2024-dwwm-bsm-p4.github.io/monuments-jch/',
+    github: 'https://github.com/Julie-Charles16/monuments-france.git',
+    demo: 'https://Julie-Charles16.github.io/monuments-france/',
   },
   {
     id: 2,
@@ -16,8 +16,8 @@ export default [
     title: 'CV numérique',
     desc: 'CV numérique retraçant mon parcours professionnel.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/2024-dwwm-bsm-p4/cv.git',
-    demo: 'https://2024-dwwm-bsm-p4.github.io/cv-jch/',
+    github: 'https://github.com/Julie-Charles16/cv-numerique.git',
+    demo: 'https://Julie-Charles16.github.io/cv-numerique/',
   },
   {
     id: 3,
@@ -26,8 +26,8 @@ export default [
     title: 'Pidu',
     desc: "Application éducative pour apprendre l'anglais.",
     tech: ['React', 'NodeJs', 'Neon'],
-    github: 'https://github.com/code-dev-pro/-Pidu-JCH-MLE.git',
-    demo: 'https://pidu-jch-3uah5jh3v-laurenthenemanedukeasycoms-projects.vercel.app',
+    github: 'https://github.com/Julie-Charles16/pidu-jch.git',
+    demo: 'https://pidu-jch.vercel.app/',
   },
   {
     id: 4,
@@ -36,7 +36,9 @@ export default [
     title: 'Tangram',
     desc: 'Jeu interactif permettant de reconstituer des formes à partir de pièces géométriques.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/2024-dwwm-bsm-p4/tangram-mle.git',
+    github: 'https://github.com/Julie-Charles16/tangram.git',
+    demo: 'https://Julie-Charles16.github.io/tangram',
+
   },
   {
     id: 5,
@@ -45,6 +47,6 @@ export default [
     title: 'Syntax Showdown',
     desc: 'Jeu où les langages de programmation s’affrontent en avatars dans une arène digitale.',
     tech: ['PHP', 'MySQL', 'Docker'],
-    github: 'https://github.com/2024-dwwm-bsm-p4/random-fight-mla.git',
+    github: 'https://github.com/Julie-Charles16/Syntax-Showdown.git',
   },
 ]

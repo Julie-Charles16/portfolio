@@ -4,7 +4,6 @@ html,
 body,
 #root {
   overflow: hidden;
-  background-color: #fcf1fd;
   margin: 0;
   padding: 0;
 }
@@ -34,7 +33,7 @@ p {
 
 @keyframes scrollUp {
   0% {
-    transform: translateY(100%); /* commence sous la zone visible */
+    transform: translateY(50%); /* commence sous la zone visible */
   }
   100% {
     transform: translateY(-100%); /* fini au-dessus de la zone visible */
@@ -76,8 +75,8 @@ body.light {
     color 0.3s ease;
 }
 
-body.dark {
-  background-color: #1e1e1e; /* fond sombre */
+body.dark{
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)); /* fond sombre */
   color: #ffffff; /* texte en clair */
   transition:
     background-color 0.3s ease,
