@@ -38,7 +38,6 @@ export default [
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/Julie-Charles16/tangram.git',
     demo: 'https://Julie-Charles16.github.io/tangram',
-
   },
   {
     id: 5,

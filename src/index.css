@@ -75,7 +75,7 @@ body.light {
     color 0.3s ease;
 }
 
-body.dark{
+body.dark {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)); /* fond sombre */
   color: #ffffff; /* texte en clair */
   transition:

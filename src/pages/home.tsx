@@ -5,13 +5,22 @@ export default function Home() {
   return (
     <div
       className="flex flex-col min-h-screen
-                    bg-[#fcf1fd] dark:bg-gray-900
-                    text-gray-800 dark:text-white"
+                 bg-[#fcf1fd] dark:bg-gray-900
+                 text-gray-800 dark:text-white"
     >
-      <div className="flex flex-1 items-center justify-center px-6 sm:px-10">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-10 lg:gap-20 xl:gap-60">
+      <div className="flex flex-1 flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-center px-6 sm:px-10 pt-16 lg:pt-0 pb-12">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 xl:gap-60 w-full max-w-6xl">
+          
+          {/* Image */}
+          <img
+            src="./img/moi.png"
+            alt="mon avatar"
+            className="order-1 lg:order-2 w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[400px] lg:h-[400px]
+                       object-cover rounded-full lg:ml-24 border-4 border-black dark:border-white"
+          />
+
           {/* Bloc texte */}
-          <div className="flex flex-col justify-center text-center lg:text-left">
+          <div className="order-2 lg:order-1 flex flex-col justify-center text-center lg:text-left mt-6 lg:mt-0">
             <Title
               title="JULIE"
               tag="h1"
@@ -45,14 +54,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Image */}
-          <img
-            src="./img/moi.png"
-            alt="mon avatar"
-            className="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[400px] lg:h-[400px]
-                       object-cover rounded-full lg:ml-24 border-4 border-black
-                       dark:border-white"
-          />
         </div>
       </div>
     </div>
