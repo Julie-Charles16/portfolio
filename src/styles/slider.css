@@ -1,185 +1,35 @@
+/* ⚙️ Conserve la perspective 3D */
 .slideC {
   position: relative;
   perspective: 1000px;
   transform-style: preserve-3d;
-  width: 90%;
-  max-width: 360px;
-  height: clamp(320px, 55vh, 420px); /* hauteur flexible */
-  margin: 0 auto;
 }
 
+/* 🎞 Animation du glissement des slides */
 .slide {
-  width: 100%;
-  height: 100%;
   transition:
     transform 500ms ease,
     opacity 500ms ease,
     visibility 500ms ease;
-  position: absolute;
-  top: 0;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
-/* Boutons de navigation */
-.btns {
-  margin-top: 2rem; /* espace par défaut */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-
-.btns .btn {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #ffffff20, #00000020);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.4),
-    inset 0 1px 2px rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-body.dark .btns .btn:hover {
-  transform: translateY(-3px) scale(1.05);
-  background: linear-gradient(145deg, #ffffff40, #00000030);
-  box-shadow:
-    0 6px 16px rgba(0, 0, 0, 0.6),
-    inset 0 1px 3px rgba(255, 255, 255, 0.3);
-}
-
-body.dark .btns .btn {
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
-  box-shadow:
-    0 6px 16px rgba(138, 138, 138, 0.6),
-    inset 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-body.dark .btns .btn:hover {
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
-  box-shadow:
-    0 6px 16px rgba(138, 138, 138, 0.6),
-    inset 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* Contenu du slide */
-.sliderContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  padding: 1rem;
-  box-sizing: border-box;
-  text-align: center;
-  overflow: hidden;
-}
-
-.sliderContent img.projectImage {
-  width: 100%;
-  height: auto;
-  max-height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-.sliderContent h2 {
-  font-weight: 700;
-  color: inherit;
-}
-
-.sliderContent p {
-  font-size: 0.9rem;
-  line-height: 1.4;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-height: 4.5em;
-}
-
-.techStack {
-  margin-top: 10px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tech {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 12px;
-}
-
-.links {
-  margin-top: 15px;
-  display: flex;
-  gap: 12px;
-}
-
-.links a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 6px 12px;
-  border: 1px solid white;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.links a:hover {
-  background: white;
-  color: #111;
-}
-
-/* REFLEXION (désactivée sur mobile pour éviter débordement) */
+/* 💡 Réflexion animée */
 .reflection {
-  position: absolute;
-  width: 100%;
-  height: 60px;
-  bottom: -60px;
-  border-radius: 12px;
   transition:
     transform 500ms ease,
     opacity 500ms ease,
     visibility 500ms ease;
 }
 
-/* 📱 Petits écrans */
+/* 🖱 Effet de survol sur les boutons */
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* 📱 Réduction du reflet sur mobile */
 @media (max-width: 700px) {
-  .slideC {
-    height: clamp(300px, 50vh, 400px);
-  }
-  .sliderContent p {
-    font-size: 0.85rem;
-  }
-  .btns {
-    margin-top: 1rem; /* espace réduit */
-  }
   .reflection {
     display: none;
   }
 }
 
-@media (max-width: 400px) {
-  .slideC {
-    height: clamp(280px, 48vh, 360px);
-  }
-  .sliderContent h2 {
-    font-size: 1rem;
-  }
-  .sliderContent p {
-    font-size: 0.8rem;
-  }
-  .btns {
-    margin-top: 0.75rem; /* encore un peu moins */
-  }
-}

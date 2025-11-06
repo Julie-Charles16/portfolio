@@ -25,17 +25,20 @@ export default function ButtonDark({ icon, altIcon, text, className }: ButtonPro
   const iconFilter = isDark ? '' : 'filter invert brightness-0'
 
   return (
-   <button
-  className={`relative rounded-full min-w-[40px] h-[40px] sm:min-w-[50px] sm:h-[50px] px-3 sm:px-4 flex items-center justify-center
+    <button
+      className={`relative rounded-full min-w-[40px] h-[40px] sm:min-w-[50px] sm:h-[50px] px-3 sm:px-4 flex items-center justify-center
               cursor-pointer hover:scale-110 transition-all duration-300 ${className || ''}`}
-  style={{ backgroundColor }}
-  aria-label={text || 'Bouton avec icône'}
-  onClick={toggleTheme}
->
-
+      style={{ backgroundColor }}
+      aria-label={text || 'Bouton avec icône'}
+      onClick={toggleTheme}
+    >
       <div className="flex items-center gap-2">
         {currentIcon && (
-<img className={`w-4 h-4 sm:w-5 sm:h-5 ${iconFilter}`} src={currentIcon} alt="icône du bouton" />
+          <img
+            className={`w-4 h-4 sm:w-5 sm:h-5 ${iconFilter}`}
+            src={currentIcon}
+            alt="icône du bouton"
+          />
         )}
         {text && <span className={`font-semibold text-sm ${textColor}`}>{text}</span>}
       </div>

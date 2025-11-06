@@ -9,8 +9,7 @@ export default function Home() {
                  text-gray-800 dark:text-white"
     >
       <div className="flex flex-1 flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-center px-6 sm:px-10 pt-16 lg:pt-0 pb-12">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 xl:gap-60 w-full max-w-6xl">
-          
+        <div className="container mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-20 xl:gap-60">
           {/* Image */}
           <img
             src="./img/moi.png"
@@ -53,7 +52,6 @@ export default function Home() {
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
