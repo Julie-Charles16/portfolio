@@ -18,28 +18,19 @@ export default function About() {
       <div className="star-wars-container overflow-hidden h-[70vh] relative w-full">
         <div className="star-wars-text flex flex-col space-y-6 animate-scrollUp">
           <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-center">
-            Je suis Julie Charles. Avant de plonger dans l’univers du code, j’évoluais dans celui de
-            l’esthétique.
+            Je m’appelle Julie Charles. Avant de me tourner vers le développement web, j’ai évolué dans le domaine de l’esthétique. 
+            Deux univers en apparence très différents, mais qui partagent finalement beaucoup : le sens du détail, l’écoute des besoins, la précision et la créativité.
           </p>
           <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-center">
-            Deux mondes que tout semble opposer, et pourtant… le souci du détail, l’écoute, la
-            précision, la créativité.
+            Ma reconversion m’a permis de découvrir le code comme un nouveau langage, une nouvelle façon de réfléchir et de construire. 
+            Apprendre à développer demande de la curiosité, de la patience et de la persévérance — des qualités que j’ai renforcées tout au long de mon parcours.
           </p>
           <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-center">
-            Apprendre à coder, c’est comme apprendre un nouveau langage, une nouvelle manière de
-            penser.
+            Aujourd’hui, je poursuis ma formation en Conception et Développement d’Applications (CDA) et je suis à la recherche d’un stage afin de consolider mes compétences techniques et de me confronter à des projets concrets. 
+            J’avance projet après projet, en affinant ma pratique et en développant une approche centrée sur l’utilisateur.
           </p>
           <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-center">
-            Cela demande patience, curiosité, et une bonne dose de résilience — des qualités que
-            j’ai cultivées au fil de mon parcours.
-          </p>
-          <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-center">
-            Aujourd’hui diplômée, je continue à avancer, projet après projet, en affinant mes
-            compétences et ma vision.
-          </p>
-          <p className="text-base sm:text-lg md:text-xl lg:text-3xl text-center">
-            Ce que je cherche ? Donner du sens à ce que je crée. Et mettre le code au service
-            d’idées humaines, utiles et bien pensées.
+           Ce qui me motive avant tout : donner du sens à ce que je crée, et mettre le développement au service d’idées humaines, utiles et bien pensées.
           </p>
         </div>
       </div>

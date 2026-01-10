@@ -25,7 +25,7 @@ p {
 }
 
 .star-wars-text {
-  animation: scrollUp 30s linear;
+  animation: scrollUp 45s linear;
 }
 
 @keyframes scrollUp {
