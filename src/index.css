@@ -3,7 +3,6 @@
 html,
 body,
 #root {
-  overflow: hidden;
   margin: 0;
   padding: 0;
 }
@@ -18,14 +17,26 @@ p {
 }
 
 .star-wars-container {
-  overflow: hidden;
-  height: 70vh; /* zone visible */
   position: relative;
   width: 100%;
+  overflow: visible;
+}
+
+@media (min-width: 640px) {
+  .star-wars-container {
+    height: 90vh;
+    overflow: hidden;
+  }
 }
 
 .star-wars-text {
-  animation: scrollUp 45s linear;
+  animation: none;
+}
+
+@media (min-width: 640px) {
+  .star-wars-text {
+    animation: scrollUp 45s linear;
+  }
 }
 
 @keyframes scrollUp {

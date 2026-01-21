@@ -5,7 +5,6 @@ export default function Logo() {
   return (
     <div>
       <Link to="/">
-        {/* <img src="./img/Me.png" alt="mon avatar" className="w-[65px] h-[65px]" /> */}
         <Title title="JULIE" tag="h3" className="font-bold text-2xl" />
       </Link>
     </div>

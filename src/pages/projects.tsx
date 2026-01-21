@@ -13,7 +13,7 @@ export default function Projects() {
                 px-4 sm:px-6 md:px-10 pt-responsive
                 bg-[#fcf1fd] dark:bg-gray-900
                 text-gray-800 dark:text-white
-                min-h-[90vh] sm:min-h-screen"
+                min-h-[60vh] sm:min-h-[60vh]"
       >
         <Title
           title="Mes projets"

@@ -6,7 +6,7 @@ export default function Contact() {
     <section
       className="min-h-screen flex flex-col items-center justify-start px-4 pt-responsive
                     bg-[#fcf1fd] dark:bg-gray-900
-                    text-gray-800 dark:text-white"
+                    text-gray-800 dark:text-white min-h-[60vh] sm:min-h-[60vh]"
     >
       <Title
         title="Contactez-moi"

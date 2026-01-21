@@ -6,7 +6,7 @@ export default function Home() {
     <div
       className="flex flex-col min-h-screen
                  bg-[#fcf1fd] dark:bg-gray-900
-                 text-gray-800 dark:text-white"
+                 text-gray-800 dark:text-white min-h-[88vh] sm:min-h-[80vh]"
     >
       <div className="flex flex-1 flex-col lg:flex-row items-start lg:items-center justify-start lg:justify-center px-6 sm:px-10 pt-16 lg:pt-0 pb-12">
         <div className="container mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-20 xl:gap-60">

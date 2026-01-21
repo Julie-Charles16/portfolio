@@ -24,6 +24,7 @@
 /* 🖱 Effet de survol sur les boutons */
 .btn:hover {
   transform: translateY(-3px) scale(1.05);
+  cursor: pointer;
 }
 
 /* 📱 Réduction du reflet sur mobile */
@@ -32,4 +33,3 @@
     display: none;
   }
 }
-
