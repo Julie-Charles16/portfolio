@@ -43,7 +43,7 @@ export default function Home() {
               />
             </div>
             <div className="mt-6 flex justify-center lg:justify-start">
-              <a href="/CV-JULIE.CHARLES.pdf" download target="_blank" rel="noopener noreferrer">
+              <a href="/cv.pdf" download target="_blank" rel="noopener noreferrer">
                 <ButtonDark
                   icon="/img/download.png"
                   text="CV"
